@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Danh Sách Sinh Viên</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Họ Tên</th>
+                <th>Tuổi</th>
+                <th>Điểm 1</th>
+                <th>Điểm 2</th>
+                <th>Điểm Trung Bình</th>
+                <th>Xếp Loại</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable">
+        </tbody>
+    </table>
+
+    <h3 id="averageScore"></h3>
+    <h3 id="hasUnder18"></h3>
+    <h3 id="allHaveNames"></h3>
+
+    <script>
+        class Student {
+            constructor(name, age, score1, score2) {
+                this.name = name;
+                this.age = age;
+                this.score1 = score1;
+                this.score2 = score2;
+            }
+
+            getAverage() {
+                return (this.score1 + this.score2) / 2;
+            }
+
+            getRank() {
+                const avg = this.getAverage();
+                if (avg >= 8.5) return "Giỏi";
+                if (avg >= 6.5) return "Khá";
+                if (avg >= 5) return "Trung Bình";
+                return "Yếu";
+            }
+        }
+
+        const students = [
+            new Student("Nguyễn Văn A", 19, 8, 9),
+            new Student("Trần Thị B", 20, 6, 7),
+            new Student("Lê Văn C", 17, 5, 5),
+            new Student("Phạm Thị D", 18, 9, 8)
+        ];
+
+        function renderStudents() {
+            const tableBody = document.getElementById("studentTable");
+            students.forEach(student => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${student.name}</td>
+                    <td>${student.age}</td>
+                    <td>${student.score1}</td>
+                    <td>${student.score2}</td>
+                    <td>${student.getAverage().toFixed(2)}</td>
+                    <td>${student.getRank()}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            const totalAverage = students.reduce((sum, student) => sum + student.getAverage(), 0) / students.length;
+            document.getElementById("averageScore").textContent = `Điểm trung bình cộng của lớp: ${totalAverage.toFixed(2)}`;
+
+            const hasUnder18 = students.some(student => student.age < 18);
+            document.getElementById("hasUnder18").textContent = `Có sinh viên nào dưới 18 tuổi không? ${hasUnder18 ? "Có" : "Không"}`;
+
+            const allHaveNames = students.every(student => student.name.trim() !== "");
+            document.getElementById("allHaveNames").textContent = `Cả lớp có đầy đủ tên không? ${allHaveNames ? "Có" : "Không"}`;
+        }
+
+        renderStudents();
+    </script>
+
+</body>
+</html> -->
