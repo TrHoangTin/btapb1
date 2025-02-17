@@ -1,4 +1,4 @@
-// Tran Hoang Tin
+// Tran Hoang Tin 2180604446
 class Student {
     constructor(name, age, score1, score2) {
         this.name = name;
