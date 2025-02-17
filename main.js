@@ -24,10 +24,10 @@ class Student {
 
 // Tạo mảng gồm 4 sinh viên
 const students = [
-    new Student("Nguyễn Văn A", 19, 8, 9),
-    new Student("Trần Thị B", 20, 6, 7),
-    new Student("Lê Văn C", 17, 5, 5),
-    new Student("Phạm Thị D", 18, 9, 8)
+    new Student("Tran Hoang Tin", 19, 8, 9),
+    new Student("Nguyen Hoang Phi Long", 20, 6, 7),
+    new Student("Trinh Huu Hoang Anh", 17, 5, 5),
+    new Student("Phạm Quoc Trung", 18, 9, 8)
 ];
 
 // 1. Sử dụng map để in ra xếp loại của từng sinh viên
